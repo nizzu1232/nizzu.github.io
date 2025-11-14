@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nizzu's Interactive Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles-bg" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">Nizzu's Interactive Journey</div>
+      <div class="nav-right">
+        <button id="adminToggle" class="ghost-btn" title="Open Admin (hold ALT)">Admin</button>
+      </div>
+    </nav>
+
+    <main class="hero-inner">
+      <h1>Hi, I’m <span class="neon">Nizzu</span> 👋</h1>
+      <p class="tagline">A Student Who Turns Ideas into Digital Stories.</p>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+      </div>
+
+      <img id="dragon" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='90' viewBox='0 0 220 90'><g fill='%23A5FFF8' stroke='%239C7CFF' stroke-width='3'><path d='M10 70 C50 10, 100 10, 140 46 C180 82, 200 64,210 52' fill='none'/></g></svg>" alt="decorative dragon" />
+    
+      <!-- Iron Man 3D Canvas -->
+      <canvas id="ironmanCanvas"></canvas>
+
+    
+    </main>
+  </header>
+
+  <main class="container">
+    <section id="timeline" class="section">
+      <h2 data-aos="fade-up">Learning Timeline</h2>
+      <div class="timeline" id="timelineContainer" aria-live="polite"></div>
+    </section>
+
+    <section id="projects" class="section dark-card">
+      <h2 data-aos="fade-up">Projects</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 data-aos="fade-up">Skills</h2>
+      <div class="skills-grid">
+        <canvas id="skillsChart" width="600" height="380" aria-hidden="true"></canvas>
+        <div class="skills-list" id="skillsList"></div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section dark-card">
+      <h2 data-aos="fade-up">Achievements</h2>
+      <div class="achievements-grid" id="achievementsGrid"></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2 data-aos="fade-up">Let’s Connect</h2>
+      <p class="muted">I’m open to chat about projects, collabs, or coffee ☕</p>
+      <div class="contact-row">
+        <div class="contact-icons">
+          <a href="#" id="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" id="github" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:you@example.com" id="email" aria-label="Email">Email</a>
+        </div>
+        <div class="message-box">
+          <textarea id="messageInput" placeholder="Write a quick message..."></textarea>
+          <button id="sendBtn" class="neon-btn">Send Message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 Nizzu | Designed with ❤ and JavaScript.</footer>
+
+  <!-- Hidden Admin Panel -->
+  <div id="adminPanel" class="admin-panel hidden" aria-hidden="true">
+    <header class="admin-header">
+      <h3>Admin — Content Editor</h3>
+      <div class="admin-actions">
+        <button id="exportJSON" class="ghost-btn">Export JSON</button>
+        <input id="importFile" type="file" accept="application/json" style="display:none" />
+        <button id="importBtn" class="ghost-btn">Import JSON</button>
+        <button id="closeAdmin" class="ghost-btn">Close</button>
+      </div>
+    </header>
+    <main class="admin-main">
+      <textarea id="adminEditor" spellcheck="false" aria-label="Admin JSON editor"></textarea>
+    </main>
+  </div>
+
+  <!-- Sample data embedded -->
+  <script id="sampleData" type="application/json">
+  {
+    "timeline": [
+      {"year": 2024, "title": "Started learning coding", "desc": "First steps into HTML, CSS and JavaScript.", "icon":"💻"},
+      {"year": 2024, "title": "Built my first website", "desc": "Launched a personal static site for practice.", "icon":"🌐"},
+      {"year": 2025, "title": "Created my AI-powered portfolio", "desc": "Integrated small AI features into the portfolio.", "icon":"🤖"}
+    ],
+    "projects": [
+      {"title":"Portfolio Website","desc":"My interactive portfolio.","img":"","link":"#"},
+      {"title":"To-Do App","desc":"Vanilla JS to-do with localStorage.","img":"","link":"#"},
+      {"title":"Weather App","desc":"Fetches weather data and displays forecast.","img":"","link":"#"},
+      {"title":"MongoDB CRUD","desc":"A small Node.js + MongoDB project.","img":"","link":"#"}
+    ],
+    "skills": {"HTML":50,"CSS":50,"JavaScript":65,"Node.js":60,"MongoDB":40},
+    "achievements": [
+      {"emoji":"🥇","title":"Won Web Design Competition 2024","desc":"Awarded 1st place in intercollege web design."},
+      {"emoji":"🎓","title":"Completed Full Stack Bootcamp","desc":"Graduated from an intensive bootcamp."},
+      {"emoji":"💡","title":"Built AI Chatbot for college event","desc":"Deployed a simple chatbot during an event."}
+    ],
+    "contact": {"linkedin":"#","github":"#","email":"you@example.com"}
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script> AOS.init({once:true,duration:700}); </script>
+</body>
+</html>

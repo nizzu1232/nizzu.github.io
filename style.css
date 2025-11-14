@@ -1,0 +1,98 @@
+:root{
+  --bg:#04050a;
+  --card:#0b0e16;
+  --neon-blue:#5ef0ff;
+  --neon-purple:#9c7cff;
+  --muted:#9aa3b2;
+  --glass:rgba(255,255,255,0.02);
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#01020a 0%, #071022 100%);color:#dff9ff}
+a{color:inherit;text-decoration:none}
+#particles-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6}
+
+/* NAV & HERO */
+.hero{min-height:72vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1;padding:2.5rem 1rem}
+.nav{width:100%;max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
+.logo{font-weight:700;font-size:1rem;color:var(--neon-blue)}
+.ghost-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:var(--muted);backdrop-filter: blur(6px);cursor:pointer}
+.hero-inner{text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3rem);margin:0}
+.neon{color:var(--neon-blue);text-shadow:0 0 12px rgba(94,240,255,0.22),0 0 28px rgba(156,124,255,0.08)}
+.tagline{color:var(--muted);margin-top:10px}
+.scroll-hint{margin:24px auto 0;width:36px;height:56px;display:flex;flex-direction:column;gap:6px;align-items:center}
+.arrow{width:6px;height:6px;border-right:2px solid var(--neon-blue);border-bottom:2px solid var(--neon-blue);transform:rotate(45deg);opacity:0.95;animation:down 1.2s infinite}
+.arrow:nth-child(2){animation-delay:0.15s}
+.arrow:nth-child(3){animation-delay:0.3s}
+@keyframes down{0%{transform:translateY(-4px) rotate(45deg)}50%{transform:translateY(6px) rotate(45deg)}100%{transform:translateY(-4px) rotate(45deg)}}
+#dragon{position:fixed;right:6%;top:18vh;width:220px;z-index:1;filter:drop-shadow(0 0 18px rgba(156,124,255,0.18))}
+
+/* LAYOUT */
+.container{max-width:1100px;margin:2rem auto;padding:0 1rem;z-index:1}
+.section{padding:2.2rem 0}
+.section h2{font-size:1.4rem;margin:0 0 1rem;color:var(--neon-purple);text-shadow:0 0 12px rgba(156,124,255,0.06)}
+
+/* Cards */
+.dark-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.2rem;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+
+/* TIMELINE */
+.timeline{position:relative;margin-left:40px;padding-left:20px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:4px;background:linear-gradient(#5ef0ff,#9c7cff);border-radius:2px}
+.timeline-item{position:relative;padding:18px 18px 18px 36px;margin-bottom:18px;border-radius:10px;background:var(--glass);backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(0,0,0,0.6);transition:transform .25s}
+.timeline-item:hover{transform:translateY(-6px)}
+.timeline-item .meta{position:absolute;left:-60px;top:18px;width:64px;text-align:center}
+.timeline-item .meta .year{font-weight:700;color:var(--neon-blue)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.project-card{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.04);transition:transform .25s, box-shadow .25s;overflow:hidden}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(92,130,255,0.08);border-color:rgba(94,240,255,0.18)}
+.project-thumb{height:120px;background:linear-gradient(180deg, rgba(94,240,255,0.04), rgba(156,124,255,0.03));border-radius:8px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.project-title{font-weight:600}
+.project-actions{display:flex;justify-content:flex-end;align-items:center;margin-top:8px}
+.neon-btn{background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));border:none;padding:8px 12px;border-radius:10px;color:#00101a;cursor:pointer}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center}
+.skills-list{display:flex;flex-direction:column;gap:10px}
+.skill-line{display:flex;justify-content:space-between;align-items:center}
+.skill-bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden;width:60%}
+.skill-bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));box-shadow:0 6px 22px rgba(156,124,255,0.08)}
+
+/* ACHIEVEMENTS */
+.achievements-grid{display:flex;flex-wrap:wrap;gap:12px}
+.achievement{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);min-width:220px;display:flex;gap:12px;align-items:center}
+
+/* CONTACT */
+.contact-row{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.contact-icons a{display:inline-block;padding:8px 12px;border-radius:8px;margin-right:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+.message-box{flex:1;min-width:260px}
+#messageInput{width:100%;min-height:100px;border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+
+/* FOOTER */
+.footer{text-align:center;padding:18px;color:var(--muted);font-size:0.95rem}
+
+/* ADMIN */
+.admin-panel{position:fixed;right:22px;top:22px;width:640px;max-width:calc(100% - 48px);height:72vh;background:linear-gradient(180deg,#050610,#081022);border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(1,6,23,0.9);border-radius:12px;padding:12px;z-index:100;display:flex;flex-direction:column;transition:opacity .18s, transform .18s}
+.admin-panel.hidden{opacity:0;transform:translateY(-12px);pointer-events:none}
+.admin-header{display:flex;justify-content:space-between;align-items:center}
+#adminEditor{flex:1;width:100%;margin-top:12px;border-radius:8px;background:#02040a;color:#bfeff6;padding:12px;border:none;resize:none;font-family:monospace;overflow:auto}
+
+/* RESPONSIVE */
+@media (max-width:880px){
+  .skills-grid{grid-template-columns:1fr}
+  #dragon{display:none}
+  .admin-panel{right:8px;left:8px;width:auto}
+}
+
+#ironmanCanvas {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  width: 350px;
+  height: 450px;
+  z-index: 10;
+  pointer-events: none;
+}
+

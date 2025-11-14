@@ -1,0 +1,77 @@
+{
+  "timeline": [
+    {
+      "year": 2024,
+      "title": "Started learning coding",
+      "desc": "First steps into HTML, CSS and JavaScript.",
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "year": 2024,
+      "title": "Built my first website",
+      "desc": "Launched a personal static site for practice.",
+      "icon": "\ud83c\udf10"
+    },
+    {
+      "year": 2025,
+      "title": "Created my AI-powered portfolio",
+      "desc": "Integrated small AI features into the portfolio.",
+      "icon": "\ud83e\udd16"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "desc": "My interactive portfolio.",
+      "img": "",
+      "link": "#"
+    },
+    {
+      "title": "To-Do App",
+      "desc": "Vanilla JS to-do with localStorage.",
+      "img": "",
+      "link": "#"
+    },
+    {
+      "title": "Weather App",
+      "desc": "Fetches weather data and displays forecast.",
+      "img": "",
+      "link": "#"
+    },
+    {
+      "title": "MongoDB CRUD",
+      "desc": "A small Node.js + MongoDB project.",
+      "img": "",
+      "link": "#"
+    }
+  ],
+  "skills": {
+    "HTML": 50,
+    "CSS": 50,
+    "JavaScript": 65,
+    "Node.js": 60,
+    "MongoDB": 40
+  },
+  "achievements": [
+    {
+      "emoji": "\ud83e\udd47",
+      "title": "Won Web Design Competition 2024",
+      "desc": "Awarded 1st place in intercollege web design."
+    },
+    {
+      "emoji": "\ud83c\udf93",
+      "title": "Completed Full Stack Bootcamp",
+      "desc": "Graduated from an intensive bootcamp."
+    },
+    {
+      "emoji": "\ud83d\udca1",
+      "title": "Built AI Chatbot for college event",
+      "desc": "Deployed a simple chatbot during an event."
+    }
+  ],
+  "contact": {
+    "linkedin": "#",
+    "github": "#",
+    "email": "you@example.com"
+  }
+}
